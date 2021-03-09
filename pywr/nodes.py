@@ -373,7 +373,7 @@ class Storage(Loadable, Drawable, Connectable, _core.Storage, metaclass=NodeMeta
             self.model.graph.add_node(node)
 
     def iter_slots(self, slot_name=None, is_connector=True, all_slots=False):
-        if is_connector:
+        if not is_connector:
             if not self.inputs:
                 raise StopIteration
             if slot_name is None:
